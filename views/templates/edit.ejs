@@ -1,0 +1,10 @@
+<%- layout("layouts/boilerplate") %> <!--This means you say layout() to send all the html below to the layouts/boilerplate.ejs, and boilerplate receives the tag that you specified there form this html, in this case body-->
+<body>
+    <form method="post" action="/listings/<%= updateListing._id %>?_method=patch">
+        <input type="text" name="details[title]" value="<%= updateListing.title %>"><br><br>
+        <textarea rows="15" cols="20" type="text" name="details[description]"><%= updateListing.description %></textarea><br><br>
+        <input type="number" name="details[price]" value="<%= updateListing.price %>"><br><br>
+        <input type="text" name="details[location]" value="<%= updateListing.location %>"><br><br>
+        <button>Submit</button>
+    </form>
+</body>

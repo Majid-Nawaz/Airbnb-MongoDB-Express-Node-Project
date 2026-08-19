@@ -1,0 +1,13 @@
+<%- layout("layouts/boilerplate") %> <!--This means you say layout() to send all the html below to the layouts/boilerplate.ejs, and boilerplate receives the tag that you specified there form this html, in this case body-->
+    <h1>All Listings</h1>
+    <form method="get" action="/listings/new">
+        <button>Create Listing</button>
+    </form>
+    <li>
+    <% for(let listing of allListings){%>
+        
+            <a href="http://localhost:8080/listings/<%= listing._id %>"><ul><%= listing.title %></ul></a>
+    <% } %>
+    </li>
+</body>
+</html>
