@@ -1,13 +1,21 @@
-<%- layout("layouts/boilerplate") %> <!--This means you say layout() to send all the html below to the layouts/boilerplate.ejs, and boilerplate receives the tag that you specified there form this html, in this case body-->
-    <h1>All Listings</h1>
-    <form method="get" action="/listings/new">
-        <button>Create Listing</button>
-    </form>
-    <li>
-    <% for(let listing of allListings){%>
+<%- layout("layouts/boilerplate") %> <!--This means you say layout() to send all the html below to the layouts/boilerplate.ejs, and boilerplate receives the tag that you specified there form this html, in this case body-->  
+<body>
+    <h3 id="allListingsHtwo">All listings</h3>
+    <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-1 mainCards">
         
-            <a href="http://localhost:8080/listings/<%= listing._id %>"><ul><%= listing.title %></ul></a>
-    <% } %>
-    </li>
+        <% for(let listing of allListings){%>
+
+            <a href="http://localhost:8080/listings/<%= listing._id %>" id="indexCardAnchor">
+                <div class="card col mb-5">
+                    <img src=" <%= listing.image.url %>" class="card-img-top indexImg" alt="..." style="height: 20rem;">
+                    <div class="card-body">
+                        <p class="card-text">
+                            <%= listing.title %> <br>
+                            &euro; <%= listing.price %>
+                        </p>
+                    </div>
+                </div>
+            </a>
+        <% } %>
+    </div>
 </body>
-</html>

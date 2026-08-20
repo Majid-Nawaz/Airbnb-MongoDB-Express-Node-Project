@@ -1,15 +1,30 @@
 <!-- When you call the layout() function, it needs to capture the entire HTML structure of your page and inject it into your boilerplate template. -->
 <%- layout("layouts/boilerplate.ejs") %>  <!--Because EJS paths are calculated relative to the main views folder (not the file you are currently inside), you do not need to climb up to the grandparent directory.-->
 <body>      <!--This means you say layout() to send all the html below to the layouts/boilerplate.ejs, and boilerplate receives the tag that you specified there form this html, in this case body-->
-    <h2><%= listingDetail.title %></h2>
-    <img src="<%= listingDetail.image.URL %>" alt="">
-    <p><%= listingDetail.description %></p>
-    <p>Price: <%= listingDetail.price %></p>
-    <p>Location: <%= listingDetail.location %></p>
+
+    <div class="row mainCards">
+        <div class="col-6 offset-3">
+    <div class="card col mb-5">
+                    <img src="<%= listingDetail.image.url %>" class="card-img-top indexImg" alt="..." style="height: 20rem;">
+                    <div class="card-body">
+                        <p class="card-text">
+                            <h3><%= listingDetail.title %></h3> <br>
+                            <%= listingDetail.description %> <br>
+                            Price: &euro; <%= listingDetail.price %> <br>
+                            Location: <%= listingDetail.location %>
+                        </p>
+                    </div>
+                    <div class="formShowBtns">
     <form method="get" action="/listings/<%= listingDetail._id %>/edit">
-        <button>Edit</button>
+        <button class="btn btn-danger">Edit</button>
     </form>
     <form method="post" action="/listings/<%= listingDetail._id %>?_method=delete">
-        <button>Delete</button>
+        <button class="btn btn-danger">Delete</button>
     </form>
+    <br>
+    </div>
+                </div>
+                </div>
+                </div>
+    
 </body>

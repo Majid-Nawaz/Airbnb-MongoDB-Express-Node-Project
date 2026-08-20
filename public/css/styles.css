@@ -35,3 +35,37 @@ footer a{
 footer p{
     margin-bottom: 0;
 }
+.mainCards{
+    padding: 2rem 2rem 2rem 2rem;
+    box-sizing: border-box;
+    width: 100%;
+
+}
+
+#allListingsHtwo{
+    padding-left: 2rem;
+}
+#indexCardAnchor{
+    text-decoration: none;
+    transition: all 0.2s linear;
+}
+#indexCardAnchor:hover{
+    text-decoration: underline;
+    transform: scale(1.02);
+    color: #222222;
+}
+
+.indexImg{
+    border-radius: 1rem !important;
+}
+.newForm{
+    margin: 4rem 0px 12rem 0px !important;
+}
+.formShowBtns{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+}

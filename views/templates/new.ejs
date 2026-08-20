@@ -1,11 +1,26 @@
 <%- layout("layouts/boilerplate") %> <!--This means you say layout() to send all the html below to the layouts/boilerplate.ejs, and boilerplate receives the tag that you specified there form this html, in this case body-->
 
 <body>
+    <div class="row newForm">
+    <div class="col-8 offset-2">
     <form method="post" action="/listings">
-        <input type="text" name="details[title]" placeholder="Title"><br><br>
-        <textarea rows="15" cols="20" type="text" name="details[description]" placeholder="Description"></textarea><br><br>
-        <input type="number" name="details[price]" placeholder="Price"><br><br>
-        <input type="text" name="details[location]" placeholder="Location"><br><br>
-        <button>Submit</button>
+        <label for="title" class="form-label">Title</label>
+        <input type="text" name="details[title]" placeholder="Enter title for listing" class="form-control">
+        <label for="description" class="form-label">Description</label>
+        <textarea type="text" name="details[description]" placeholder="Enter some description" class="form-control"></textarea>
+
+        <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-2">
+        <div class="col-4">
+        <label for="price" class="form-label">Price</label>
+        <input type="number" name="details[price]" placeholder="Your Price here" class="form-control">
+        </div>
+        <div class="col-8">
+        <label for="location" class="form-label">Location</label>
+        <input type="text" name="details[location]" placeholder="Your listing location" class="form-control"><br>
+        </div>
+        </div>
+        <button class="btn btn-danger">Submit</button>
     </form>
+    </div>
+    </div>
 </body>

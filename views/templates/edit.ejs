@@ -1,10 +1,36 @@
 <%- layout("layouts/boilerplate") %> <!--This means you say layout() to send all the html below to the layouts/boilerplate.ejs, and boilerplate receives the tag that you specified there form this html, in this case body-->
 <body>
-    <form method="post" action="/listings/<%= updateListing._id %>?_method=patch">
+    <!-- <form method="post" action="/listings/<%= updateListing._id %>?_method=patch">
         <input type="text" name="details[title]" value="<%= updateListing.title %>"><br><br>
         <textarea rows="15" cols="20" type="text" name="details[description]"><%= updateListing.description %></textarea><br><br>
         <input type="number" name="details[price]" value="<%= updateListing.price %>"><br><br>
         <input type="text" name="details[location]" value="<%= updateListing.location %>"><br><br>
         <button>Submit</button>
+    </form> -->
+
+
+    
+    <div class="row newForm">
+    <div class="col-8 offset-2">
+    <form method="post" action="/listings/<%= updateListing._id %>?_method=patch">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" name="details[title]" value="<%= updateListing.title %>" class="form-control">
+        <label for="description" class="form-label">Description</label>
+        <textarea type="text" name="details[description]" class="form-control"><%= updateListing.description %></textarea>
+
+        <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-2">
+        <div class="col-4">
+        <label for="price" class="form-label">Price</label>
+        <input type="number" name="details[price]" value="<%= updateListing.price %>" class="form-control">
+        </div>
+        <div class="col-8">
+        <label for="location" class="form-label">Location</label>
+        <input type="text" name="details[location]" value="<%= updateListing.location %>" class="form-control"><br>
+        </div>
+        </div>
+        <button class="btn btn-danger">Submit</button>
     </form>
+    </div>
+    </div>
+
 </body>
